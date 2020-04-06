@@ -1,5 +1,7 @@
 {
   "name": "rick-and-morty-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
