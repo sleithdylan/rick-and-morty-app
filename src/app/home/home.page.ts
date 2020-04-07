@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CharactersService } from '../services/characters.service';
 
 @Component({
-  selector: 'app-tab1',
+  selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
