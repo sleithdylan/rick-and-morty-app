@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <!-- Default List Header -->
+  <ion-list-header>
+    <ion-label>Characters</ion-label>
+  </ion-list-header>
+
+  <!-- Default Searchbar -->
+  <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.."></ion-searchbar>
+
+  <ion-list *ngFor="let character of results">
+    <ion-item button detail lines="full" mode="md">
+      <ion-thumbnail slot="start">
+        <img src={{character.image}}>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{character.name}}</h2>
+        <p>{{character.location.name}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

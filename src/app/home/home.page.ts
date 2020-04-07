@@ -3,10 +3,10 @@ import { CharactersService } from '../services/characters.service';
 
 @Component({
   selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class Tab1Page {
+export class HomePage {
   title = 'rick-and-morty-app';
   // Initializes movies from API as an empty array
   results: any = [];
@@ -15,9 +15,9 @@ export class Tab1Page {
 
   ngOnInit() {
     // Gets data from array 'movies' from the API
-    this.cS.getCharacters().subscribe((data) => {
+    this.cS.getCharacters().subscribe((req) => {
       // Returns data from MovieAPI
-      this.results = data.results;
+      this.results = req.results;
       console.log(this.results);
     });
   }
