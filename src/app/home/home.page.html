@@ -9,7 +9,8 @@
   <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.."></ion-searchbar>
 
   <ion-list *ngFor="let character of results">
-    <ion-item button (click)="goToSelectedCharacter(character.id)" #button detail lines="full" mode="md">
+    <ion-item button (click)="goToSelectedCharacter(character.id)" [routerLink]="['/character/']" detail lines=" full"
+      mode="md">
       <ion-thumbnail slot="start">
         <img src={{character.image}}>
       </ion-thumbnail>

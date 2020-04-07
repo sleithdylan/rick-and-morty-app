@@ -7,6 +7,6 @@ import { CharacterPage } from './character.page';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, CharacterPageRoutingModule],
-  declarations: [],
+  declarations: [CharacterPage],
 })
 export class CharacterPageModule {}
