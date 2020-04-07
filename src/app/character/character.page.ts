@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../services/characters.service';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-character',
+  templateUrl: './character.page.html',
+  styleUrls: ['./character.page.scss'],
 })
-export class HomePage {
+export class CharacterPage implements OnInit {
   title = 'rick-and-morty-app';
   // Initializes movies from API as an empty array
   results: any = [];
@@ -14,14 +14,11 @@ export class HomePage {
   constructor(private cS: CharactersService) {}
 
   ngOnInit() {
-    // Gets data from array 'movies' from the API
+    // Gets data from array 'results' from the API
     this.cS.getCharacters().subscribe((req) => {
       // Returns data from MovieAPI
       this.results = req.results;
       console.log(this.results);
     });
-  }
-  goToSelectedCharacter(id: any) {
-    console.log(id);
   }
 }

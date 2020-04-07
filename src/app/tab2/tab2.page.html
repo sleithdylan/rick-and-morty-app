@@ -1,16 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list-header>
+    <ion-label>About</ion-label>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item lines="full" mode="md">
+            <p><strong>Application Name: </strong><br><br>Rick and Morty Wiki</p>
+
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item lines="full" mode="md">
+            <p><strong>Version Name: </strong><br><br>1.0.0</p>
+
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item lines="full" mode="md">
+            <p><strong>Description: </strong><br><br>Find information about your favorite Rick and Morty character.</p>
+
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
