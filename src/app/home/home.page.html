@@ -1,20 +1,21 @@
 <ion-content [fullscreen]="true">
 
   <!-- Default List Header -->
-  <ion-list-header>
-    <ion-label>Characters</ion-label>
+  <ion-list-header mode="ios">
+    <ion-label mode="ios">Characters</ion-label>
   </ion-list-header>
 
   <!-- Default Searchbar -->
-  <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.."></ion-searchbar>
+  <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios">
+  </ion-searchbar>
 
-  <ion-list *ngFor="let character of results">
+  <ion-list *ngFor="let character of results" mode="md">
     <ion-item button (click)="goToSelectedCharacter(character.id)" [routerLink]="['/character/']" detail lines=" full"
       mode="md">
       <ion-thumbnail slot="start">
         <img src={{character.image}}>
       </ion-thumbnail>
-      <ion-label>
+      <ion-label mode="md">
         <h2><strong>{{character.name}}</strong></h2>
         <p>{{character.location.name}}</p>
       </ion-label>

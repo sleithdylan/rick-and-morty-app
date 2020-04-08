@@ -1,19 +1,19 @@
 <ion-content [fullscreen]="true">
 
   <!-- Back button with a default href -->
-  <ion-header>
-    <ion-toolbar>
+  <ion-header mode="md">
+    <ion-toolbar mode="md">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref=""></ion-back-button>
+        <ion-back-button defaultHref="" mode="md"></ion-back-button>
       </ion-buttons>
       <ion-title>Character Name</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-list *ngFor="let character of results">
+  <ion-list *ngFor="let character of results" mode="ios">
     <!-- Default List Header -->
-    <ion-list-header>
-      <ion-label>{{character.id}}</ion-label>
+    <ion-list-header mode="md">
+      <ion-label mode="ios">{{character.id}}</ion-label>
     </ion-list-header>
   </ion-list>
 </ion-content>
