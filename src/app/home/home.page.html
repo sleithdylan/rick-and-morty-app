@@ -9,7 +9,7 @@
   </ion-toolbar>
   <!-- Default Searchbar -->
   <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios"
-    [(ngModel)]="search">
+    [(ngModel)]="search" (ionInput)="filterList($event)" showCancelButton="focus" cancelButtonText="">
   </ion-searchbar>
 
   <ion-list *ngFor="let character of results" mode="md">
