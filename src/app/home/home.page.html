@@ -4,9 +4,12 @@
   <ion-list-header mode="ios">
     <ion-label mode="ios">Characters</ion-label>
   </ion-list-header>
-
+  <ion-toolbar mode="ios" [hidden]=hidden *ngIf="search">
+    <ion-title size="large">{{search}}</ion-title>
+  </ion-toolbar>
   <!-- Default Searchbar -->
-  <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios">
+  <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios"
+    [(ngModel)]="search">
   </ion-searchbar>
 
   <ion-list *ngFor="let character of results" mode="md">

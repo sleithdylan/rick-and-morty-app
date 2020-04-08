@@ -10,8 +10,13 @@ export class HomePage {
   title = 'rick-and-morty-app';
   // Initializes movies from API as an empty array
   results: any = [];
+  search: string;
+  hidden: boolean;
 
-  constructor(private cS: CharactersService) {}
+  constructor(private cS: CharactersService) {
+    this.search = '';
+    this.hidden = false;
+  }
 
   ngOnInit() {
     // Gets data from array 'movies' from the API
