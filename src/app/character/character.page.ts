@@ -11,11 +11,11 @@ export class CharacterPage implements OnInit {
   // Initializes results from API as an empty array
   results: any = [];
 
-  constructor(private cS: CharactersService) {}
+  constructor(private charService: CharactersService) {}
 
   ngOnInit() {
     // Gets data from array 'results' from the API
-    this.cS.getCharacters().subscribe((req) => {
+    this.charService.getCharacters().subscribe((req) => {
       // Returns data from API
       this.results = req.results;
       console.log(this.results);

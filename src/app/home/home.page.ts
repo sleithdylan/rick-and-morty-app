@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../services/characters.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   title = 'rick-and-morty-app';
   // Initializes results, loadedResults, search, hidden
   results: any = [];
@@ -14,19 +15,30 @@ export class HomePage {
   search: string;
   hidden: boolean;
 
-  constructor(private cS: CharactersService) {
+  constructor(private charService: CharactersService) {
     this.search = '';
     this.hidden = false;
   }
 
   ngOnInit() {
+    this.loadCharacters();
+  }
+
+  loadCharacters() {
     // Gets data from array 'results' from the API
-    this.cS.getCharacters().subscribe((req) => {
-      // Returns data from API
-      this.results = req.results;
-      this.loadedResults = req.results;
-      console.log(this.results);
-    });
+    this.charService
+      .getCharacters()
+      .pipe(
+        map((result) => {
+          return result;
+        })
+      )
+      .subscribe((req) => {
+        // Returns data from API
+        this.results = req.results;
+        this.loadedResults = req.results;
+        console.log(this.results);
+      });
   }
 
   // Resets results array

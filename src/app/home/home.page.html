@@ -12,8 +12,25 @@
 
   <!-- Searchbar -->
   <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios"
-    [(ngModel)]="search" (ionInput)="filterList($event)" showCancelButton="focus" cancelButtonText="">
+    [(ngModel)]="search" (ionInput)="filterList($event)" showCancelButton=" focus" cancelButtonText="">
   </ion-searchbar>
+
+  <!-- Skeleton List of Characters -->
+  <ion-list *ngIf="results.length == 0">
+    <ion-item *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10]">
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h2>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
   <!-- List of Characters -->
   <ion-list *ngFor="let character of results" mode="md">
