@@ -1,17 +1,21 @@
 <ion-content [fullscreen]="true">
 
-  <!-- Default List Header -->
+  <!-- Header -->
   <ion-list-header mode="ios">
     <ion-label mode="ios">Characters</ion-label>
   </ion-list-header>
+
+  <!-- Toolbar -->
   <ion-toolbar mode="ios" [hidden]=hidden *ngIf="search">
     <ion-title size="large">{{search}}</ion-title>
   </ion-toolbar>
-  <!-- Default Searchbar -->
+
+  <!-- Searchbar -->
   <ion-searchbar animated autocomplete="on" autocorrect="on" placeholder="Search for character.." mode="ios"
     [(ngModel)]="search" (ionInput)="filterList($event)" showCancelButton="focus" cancelButtonText="">
   </ion-searchbar>
 
+  <!-- List of Characters -->
   <ion-list *ngFor="let character of results" mode="md">
     <!-- <ion-item button (click)="goToSelectedCharacter(character.id)" [routerLink]="['/character/' + character.id]"></ion-item> -->
     <ion-item href="https://rickandmortyapi.com/api/character/{{character.id}}" detail lines=" full" mode="md">
@@ -24,4 +28,5 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
 </ion-content>

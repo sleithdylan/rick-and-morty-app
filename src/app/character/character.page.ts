@@ -8,7 +8,7 @@ import { CharactersService } from '../services/characters.service';
 })
 export class CharacterPage implements OnInit {
   title = 'rick-and-morty-app';
-  // Initializes movies from API as an empty array
+  // Initializes results from API as an empty array
   results: any = [];
 
   constructor(private cS: CharactersService) {}
@@ -16,7 +16,7 @@ export class CharacterPage implements OnInit {
   ngOnInit() {
     // Gets data from array 'results' from the API
     this.cS.getCharacters().subscribe((req) => {
-      // Returns data from MovieAPI
+      // Returns data from API
       this.results = req.results;
       console.log(this.results);
     });

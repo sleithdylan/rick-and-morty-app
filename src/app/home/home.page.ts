@@ -8,7 +8,7 @@ import { CharactersService } from '../services/characters.service';
 })
 export class HomePage {
   title = 'rick-and-morty-app';
-  // Initializes movies from API as an empty array
+  // Initializes results, loadedResults, search, hidden
   results: any = [];
   loadedResults: any[];
   search: string;
@@ -20,23 +20,25 @@ export class HomePage {
   }
 
   ngOnInit() {
-    // Gets data from array 'movies' from the API
+    // Gets data from array 'results' from the API
     this.cS.getCharacters().subscribe((req) => {
-      // Returns data from MovieAPI
+      // Returns data from API
       this.results = req.results;
       this.loadedResults = req.results;
       console.log(this.results);
     });
   }
 
+  // Resets results array
   initializeResults(): void {
     this.results = this.loadedResults;
   }
 
-  filterList(evt) {
+  filterList(event) {
     this.initializeResults();
 
-    const searchTerm = evt.srcElement.value;
+    // Gets search term
+    const searchTerm = event.srcElement.value;
 
     if (!searchTerm) {
       return;
@@ -44,6 +46,7 @@ export class HomePage {
 
     this.results = this.results.filter((currentResult) => {
       if (currentResult.name && searchTerm) {
+        // Checks if result name matches search term
         if (currentResult.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
           return true;
         }
