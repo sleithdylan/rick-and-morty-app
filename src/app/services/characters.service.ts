@@ -14,4 +14,8 @@ export class CharactersService {
     // Returns data from API
     return this.http.get(this.url);
   }
+  getCharactersDetails(index): Observable<any> {
+    // Returns data from API
+    return this.http.get(this.url + index);
+  }
 }
