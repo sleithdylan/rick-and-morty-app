@@ -37,7 +37,7 @@ export class HomePage implements OnInit {
         // Returns data from API
         this.results = req.results;
         this.loadedResults = req.results;
-        console.log(this.results);
+        // console.log(this.results);
       });
   }
 
