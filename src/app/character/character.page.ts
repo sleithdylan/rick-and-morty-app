@@ -17,22 +17,17 @@ export class CharacterPage implements OnInit {
   constructor(private route: ActivatedRoute, private charService: CharactersService) {}
 
   ngOnInit() {
-    // Gets id
-    let index = this.route.snapshot.paramMap.get('index');
-    // Gets data from array 'results' from the API
-    this.charService.getCharactersDetails(index).subscribe((req) => {
-      // Returns character details from API
-      this.details = req;
-      console.log(req);
-    });
+    this.loadCharacterDetails();
   }
 
-  getCharacters() {
-    // Gets data from array 'results' from the API
-    this.charService.getCharacters().subscribe((req) => {
-      // Returns data from API
-      this.results = req.results;
-      console.log(this.results);
+  loadCharacterDetails() {
+    // Gets id
+    let id = this.route.snapshot.paramMap.get('id');
+    // Gets character data by id
+    this.charService.getCharactersDetails(id).subscribe((req) => {
+      // Returns character details from API
+      this.details = req;
+      // console.log(req);
     });
   }
 }

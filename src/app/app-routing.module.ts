@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./character/character.module').then((m) => m.CharacterPageModule),
   },
   {
-    path: 'character/:index',
+    path: 'character/:id',
     loadChildren: () => import('./character/character.module').then((m) => m.CharacterPageModule),
   },
 ];

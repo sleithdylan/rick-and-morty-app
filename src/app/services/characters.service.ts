@@ -14,8 +14,8 @@ export class CharactersService {
     // Returns all characters from API
     return this.http.get(this.url);
   }
-  getCharactersDetails(index): Observable<any> {
-    // Returns 1 character from API
-    return this.http.get(this.url + index);
+  getCharactersDetails(id): Observable<any> {
+    // Returns 1 character from API by id
+    return this.http.get(this.url + id);
   }
 }
