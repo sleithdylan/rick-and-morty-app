@@ -14,9 +14,50 @@
 
   <!-- List -->
   <ion-list mode="ios">
-    <ion-thumbnail slot="start">
+    <ion-thumbnail class="character-img">
       <ion-img [src]="details?.image"></ion-img>
     </ion-thumbnail>
   </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>About</ion-card-subtitle>
+      <ion-card-title>
+        {{details?.name}}
+        <ion-chip color="primary">
+          <ion-label color="primary">{{details?.status}}</ion-label>
+        </ion-chip>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- List -->
+      <ion-list mode="md">
+        <ion-item lines="full" mode="md">
+          <p><strong>Species: </strong>{{details?.species}}</p>
+        </ion-item>
+      </ion-list>
+      <!-- List -->
+      <ion-list mode="md">
+        <ion-item lines="full" mode="md">
+          <p><strong>Gender: </strong>{{details?.gender}}</p>
+        </ion-item>
+      </ion-list>
+      <!-- List -->
+      <ion-list mode="md">
+        <ion-item lines="full" mode="md">
+          <p><strong>Location: </strong>{{details?.location.name}}
+          </p>
+        </ion-item>
+      </ion-list>
+      <!-- List -->
+      <ion-list mode="md">
+        <ion-item lines="full" mode="md">
+          <p><strong>Origin: </strong>{{details?.origin.name}}
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
