@@ -11,15 +11,17 @@ export class CharacterPage implements OnInit {
   title = 'rick-and-morty-app';
   // Initializes results from API as an empty array
   results: any = [];
+  // Initializes details
   details: any;
 
   constructor(private route: ActivatedRoute, private charService: CharactersService) {}
 
   ngOnInit() {
+    // Gets id
     let index = this.route.snapshot.paramMap.get('index');
     // Gets data from array 'results' from the API
     this.charService.getCharactersDetails(index).subscribe((req) => {
-      // Returns data from API
+      // Returns character details from API
       this.details = req;
       console.log(req);
     });

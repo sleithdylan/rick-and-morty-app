@@ -11,11 +11,11 @@ export class CharactersService {
 
   constructor(public http: HttpClient) {}
   getCharacters(): Observable<any> {
-    // Returns data from API
+    // Returns all characters from API
     return this.http.get(this.url);
   }
   getCharactersDetails(index): Observable<any> {
-    // Returns data from API
+    // Returns 1 character from API
     return this.http.get(this.url + index);
   }
 }

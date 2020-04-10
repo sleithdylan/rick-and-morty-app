@@ -34,8 +34,7 @@
 
   <!-- List of Characters -->
   <ion-list *ngFor="let character of results" mode="md">
-    <ion-item button (click)="goToSelectedCharacter(character.id)" [routerLink]="['/character/' + character.id]">
-      <!-- <ion-item href="https://rickandmortyapi.com/api/character/{{character.id}}" detail lines=" full" mode="md"> -->
+    <ion-item button [routerLink]="['/character/' + character.id]" detail lines=" full" mode="md">
       <ion-thumbnail slot="start">
         <img src={{character.image}}>
       </ion-thumbnail>

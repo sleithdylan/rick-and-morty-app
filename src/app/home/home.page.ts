@@ -66,8 +66,4 @@ export class HomePage implements OnInit {
       }
     });
   }
-
-  goToSelectedCharacter(id: any) {
-    console.log(id);
-  }
 }

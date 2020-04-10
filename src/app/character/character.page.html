@@ -8,16 +8,15 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="" mode="md"></ion-back-button>
       </ion-buttons>
-      <ion-title>Character Name</ion-title>
+      <ion-title>{{details?.name}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <!-- List -->
   <ion-list mode="ios">
-    <!-- Header -->
-    <ion-list-header mode="md">
-      <ion-label mode="ios">{{details?.name}}</ion-label>
-    </ion-list-header>
+    <ion-thumbnail slot="start">
+      <ion-img [src]="details?.image"></ion-img>
+    </ion-thumbnail>
   </ion-list>
 
 </ion-content>
