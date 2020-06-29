@@ -32,9 +32,9 @@ Next, type the following in the root of this project:
 npm install
 ```
 
-### Start the local server
+### Step 3: Start the local server
 
-Type the following:
+To start the local server, type the following:
 
 ```bash
 npm run start
